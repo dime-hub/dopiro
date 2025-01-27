@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/global.css */
+
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Light gray background for the track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000; /* Default color for the scrollbar handle */
+  border-radius: 10px; /* Rounded corners */
+  border: 3px solid #f1f1f1; /* Adds padding around the handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1919; /* Darker color on hover */
+}
+
+/* Optional: Add a gradient for a modern look */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradient effect */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.6); /* Glow effect on hover */
+}
+
+/* Custom Scrollbar for Firefox */
+html {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: rgb(240, 100, 6) #f1f1f1; /* Thumb and track color */
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block px-6 py-3 rounded-full font-semibold transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-orange-600 text-white hover:bg-orange-700;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-orange-600 hover:bg-orange-50;
+  }
+}
