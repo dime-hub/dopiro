@@ -17,13 +17,13 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Products" element={<Products />} />
-            <Route path="/Benefits" element={<Benefits />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/benefits" element={<Benefits />} />
             <Route path="/recipes" element={<Recipes />} />
-            <Route path="/Sustainability" element={<Sustainability />} />
+            <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/stores" element={<StoreLocator />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Contact" element={<Contacts />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contacts />} />
           </Routes>
         </Layout>
       </ThemeProvider>
@@ -31,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
