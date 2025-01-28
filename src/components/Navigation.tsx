@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'; // Use React Router's Link
 import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
 import { NavItem } from '../types';
 import { useTheme } from '../context/ThemeContext';
@@ -7,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
-  { label: 'Store Locator', href: '/stores' },
+  { label: 'Store Locator, href: '/stores' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -26,23 +27,23 @@ export const Navigation = () => {
   return (
     <nav className="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-around  h-16">
+        <div className="flex justify-around h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+            <Link to="/" className="text-2xl font-bold text-orange-600 dark:text-orange-500">
               Dopiro
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
                 className="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <div className="relative group">
               <button
@@ -59,17 +60,17 @@ export const Navigation = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg  hover:text-orange-600 dark:hover:text-orange-500 shadow-lg"
+                    className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg hover:text-orange-600 dark:hover:text-orange-500 shadow-lg"
                   >
                     <div className="py-2">
                       {extrasItems.map((item) => (
-                        <a
+                        <Link
                           key={item.href}
-                          href={item.href}
+                          to={item.href}
                           className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                         >
                           {item.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </motion.div>
@@ -129,14 +130,14 @@ export const Navigation = () => {
               </button>
               <div className="mt-12 space-y-4 bg-black dark:bg-gray-800">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.href}
-                    href={item.href}
+                    to={item.href}
                     className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
                 <div className="space-y-2">
                   <button
@@ -156,14 +157,14 @@ export const Navigation = () => {
                         className="pl-4"
                       >
                         {extrasItems.map((item) => (
-                          <a
+                          <Link
                             key={item.href}
-                            href={item.href}
+                            to={item.href}
                             className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {item.label}
-                          </a>
+                          </Link>
                         ))}
                       </motion.div>
                     )}
